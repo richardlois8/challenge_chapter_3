@@ -1,6 +1,7 @@
 package com.rich.challenge3
 
 import android.content.Intent
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,7 @@ import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat.startActivity
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 
 class AlphabetsAdapter(private val alphabetsList: ArrayList<Alphabets>):
@@ -19,9 +21,9 @@ class AlphabetsAdapter(private val alphabetsList: ArrayList<Alphabets>):
             val btnAlphabets = itemView.findViewById<Button>(R.id.btnAlphabets)
             btnAlphabets.text = alphabetParam.alphabetValue
             btnAlphabets.setOnClickListener {
-                var activity : AppCompatActivity = itemView.context as AppCompatActivity
-                val wordsFragment = ListWordsFragment(btnAlphabets.text.toString())
-                activity.supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer,wordsFragment).addToBackStack("frag").commit()
+                val dataBundle = Bundle()
+                dataBundle.putString("clickedAlphabet",btnAlphabets.text.toString())
+                it.findNavController().navigate(R.id.action_listAlphabetsFragment_to_listWordsFragment,dataBundle)
             }
         }
     }

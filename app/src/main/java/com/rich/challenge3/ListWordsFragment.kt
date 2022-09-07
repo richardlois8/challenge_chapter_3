@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 
-class ListWordsFragment(var clickedAlphabet : String) : Fragment() {
+class ListWordsFragment() : Fragment() {
     lateinit var listWords: ArrayList<Words>
     lateinit var wordsAdapter: WordsAdapter
     lateinit var recyclerViewWords: RecyclerView
@@ -25,6 +25,7 @@ class ListWordsFragment(var clickedAlphabet : String) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val clickedAlphabet = ListWordsFragmentArgs.fromBundle(arguments as Bundle).clickedAlphabet
         dataInit(clickedAlphabet)
         recyclerViewWords = view.findViewById(R.id.recyclerViewWords)
         recyclerViewWords.setHasFixedSize(true)
