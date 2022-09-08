@@ -12,10 +12,9 @@ import androidx.recyclerview.widget.RecyclerView
 class WordsAdapter(private val wordsList : ArrayList<Words>) : RecyclerView.Adapter<WordsAdapter.WordViewHolder>() {
     class WordViewHolder(val view: View) : RecyclerView.ViewHolder(view){
         fun bindView(words: Words) {
-            val btnWords = view.findViewById<Button>(R.id.btnWords)
+            val btnWords = view.findViewById<Button>(R.id.btnText)
             btnWords.text = words.wordValue
             btnWords.setOnClickListener {
-                Toast.makeText(view.context, words.wordValue, Toast.LENGTH_SHORT).show()
                 val activity = view.context as MainActivity
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setData(Uri.parse("https://www.google.com/search?q=${words.wordValue}"))

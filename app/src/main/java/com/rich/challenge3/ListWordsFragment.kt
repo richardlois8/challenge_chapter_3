@@ -26,6 +26,7 @@ class ListWordsFragment() : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val clickedAlphabet = ListWordsFragmentArgs.fromBundle(arguments as Bundle).clickedAlphabet
+        activity?.setTitle("Words That Start With $clickedAlphabet")
         dataInit(clickedAlphabet)
         recyclerViewWords = view.findViewById(R.id.recyclerViewWords)
         recyclerViewWords.setHasFixedSize(true)
