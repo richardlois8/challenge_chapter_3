@@ -10,10 +10,11 @@
     android:backgroundTint="#0F3460">
 
     <Button
-        android:id="@+id/btnWords"
+        android:id="@+id/btnText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:text="Aku"
+        android:textColor="#fca311"
         android:textSize="25sp"
         android:backgroundTint="#0F3460" />
 </androidx.cardview.widget.CardView>
