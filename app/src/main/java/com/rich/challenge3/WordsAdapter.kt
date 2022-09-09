@@ -15,7 +15,6 @@ class WordsAdapter(private val wordsList : ArrayList<Words>) : RecyclerView.Adap
             val btnWords = view.findViewById<Button>(R.id.btnText)
             btnWords.text = words.wordValue
             btnWords.setOnClickListener {
-                Toast.makeText(view.context, words.wordValue, Toast.LENGTH_SHORT).show()
                 val activity = view.context as MainActivity
                 val intent = Intent(Intent.ACTION_VIEW)
                 intent.setData(Uri.parse("https://www.google.com/search?q=${words.wordValue}"))

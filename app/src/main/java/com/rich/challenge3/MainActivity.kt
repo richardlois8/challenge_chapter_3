@@ -13,4 +13,9 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.add(R.id.fragmentContainer, alphabetsFragment)
         fragmentTransaction.commit()
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        supportFragmentManager.beginTransaction().replace(R.id.fragmentContainer, ListAlphabetsFragment()).commit()
+        return super.onSupportNavigateUp()
+    }
 }

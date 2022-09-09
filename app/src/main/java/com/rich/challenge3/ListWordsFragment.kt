@@ -26,6 +26,9 @@ class ListWordsFragment(var clickedAlphabet : String) : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         dataInit(clickedAlphabet)
+        activity?.setTitle("Words That Start With $clickedAlphabet")
+        (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(true)
+        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         recyclerViewWords = view.findViewById(R.id.recyclerViewWords)
         recyclerViewWords.setHasFixedSize(true)
         recyclerViewWords.layoutManager = LinearLayoutManager(context)
