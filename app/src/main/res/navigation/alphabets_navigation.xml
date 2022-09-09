@@ -22,5 +22,8 @@
         <argument
             android:name="clickedAlphabet"
             app:argType="string" />
+        <action
+            android:id="@+id/action_listWordsFragment_to_listAlphabetsFragment"
+            app:destination="@id/listAlphabetsFragment" />
     </fragment>
 </navigation>
