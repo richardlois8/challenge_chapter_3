@@ -25,6 +25,8 @@ class ListAlphabetsFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         activity?.setTitle("Alphabets")
+        (activity as MainActivity).supportActionBar?.setDisplayShowHomeEnabled(false)
+        (activity as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(false)
         dataInit()
         recyclerView = view.findViewById(R.id.recyclerViewAlphabets)
         recyclerView.setHasFixedSize(true)
